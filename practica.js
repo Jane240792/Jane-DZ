@@ -135,12 +135,37 @@
 // }
 
 
-const randomNumber = Math.trunc(Math.random()*5)+1;
-const userInput = +prompt("Введите целое число от 0 до 5");
-if (!Number.isInteger(userInput) || userInput< 1 || userInput > 5) {
-    alert("Необходимо было ввести целое число от 1 до 5")
-} else if (userInput === randomNumber) {
-    alert (`Верно, я загадал число ${randomNumber}`)
-} else if ( userInput !== randomNumber) {
-    alert( `Нет, не ${userInput}, я загадал ${randomNumber}`)
-}
+// const randomNumber = Math.trunc(Math.random()*5)+1;
+// const userInput = +prompt("Введите целое число от 0 до 5");
+// if (!Number.isInteger(userInput) || userInput< 1 || userInput > 5) {
+//     alert("Необходимо было ввести целое число от 1 до 5")
+// } else if (userInput === randomNumber) {
+//     alert (`Верно, я загадал число ${randomNumber}`)
+// } else if ( userInput !== randomNumber) {
+//     alert( `Нет, не ${userInput}, я загадал ${randomNumber}`)
+// }
+
+
+// let countRows = parseInt(prompt("Введите кол-во строк"))
+//   document.write("<table><tbody><tr><td>1</td></tr></tbody></table>");
+// let startTabele = "<table><tbody>";
+//     let endTabele = "</tbody></table>";
+//     let bodyTabele = "";
+// for (let i = 0; i < countRows; i++) {
+//     if(i%2){
+//         bodyTabele += "<tr style='background-color:gray'>"+"<td>"+i+"</td>"+"<td>" + i*2 +"</td>"+"</tr>";
+//     } else {
+//         bodyTabele += "<tr style='background-color:green'>"+"<td>"+i+"</td>"+"<td>" + i*2 +"</td>"+"</tr>";
+//     }
+// }
+// document.write(startTabele+bodyTabele+endTabele);
+//
+// let countRows = parseInt(prompt("Введите кол-во строк"))
+// let bodyTable = "";
+// for (let i = 1; i <= countRows; i++) {
+//     bodyTable += `<tr style = "background-color: ${(i%2) ? 'green' : ' gray'};">
+//                         <td>${i}</td>
+//                         <td>${i*2}</td>
+//                    </tr>`
+// }
+// document.write("<table><tbody>"+ bodyTable+"</tbody></table>");
