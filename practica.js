@@ -144,5 +144,3 @@ if (!Number.isInteger(userInput) || userInput< 1 || userInput > 5) {
 } else if ( userInput !== randomNumber) {
     alert( `Нет, не ${userInput}, я загадал ${randomNumber}`)
 }
-
-local.com
