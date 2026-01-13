@@ -169,3 +169,52 @@
 //                    </tr>`
 // }
 // document.write("<table><tbody>"+ bodyTable+"</tbody></table>");
+
+// const userNames = ["Павел", "Андрей", " Игорь"]
+// console.log(userNames);
+// console.log(userNames.at(-1 ));
+// userNames[3]= "Светлана"
+// console.log(userNames);
+// userNames[1] = "Ольга"
+// console.log(userNames);
+// userNames[userNames.length] = "Анна"
+// console.log(userNames);
+// userNames.push("Ольга", "Евгения")// Добавляет в конец массива
+// console.log(userNames);
+// userNames.unshift("Светлана")// Добавляет в начало
+// console.log(userNames);
+// userNames.pop() // Удаляет значение из конца массива и возвращает его
+// const deliteUser = userNames.pop();
+// console.log(userNames);
+// console.log(deliteUser);
+// userNames.shift();// удаляет в начале массива и возвращает его
+// console.log(userNames);
+// const delitedUser = userNames.splice(1, 0, "Оксана", "Светлана");
+//
+// console.log(userNames);
+// console.log(delitedUser);
+
+// let str = "Я люблю JavaScript!!!";
+// let regExp = /Лю/ig;
+// //console.log(str.search(regExp));
+// console.log(str.match(regExp));
+//  let str2 = "asfdas";
+//  let str3 = str2.replace(/as/ig, '20')
+// console.log(str3);
+//  str11 = "Привет мир!!!"
+//  regExp = /Мир/i;
+//  console.log(regExp.test(str11));
+//  let str12 =  "ой-ой-ой"
+// regExp = /Ой/ig;
+//  let temp;
+//  do{
+//     temp = regExp.exec(str12);
+//     temp && console.log(temp[0]);
+//  }while (temp);
+
+
+
+// . - почти "любой" символ кроме \n
+// regExp = /CS.4/i
+// console.log( "CSS4".match(regExp));
+// console.log( "CS-4".match(regExp));
