@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DZ-6</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+
+//     1. Реализовать функцию foo:
+//         let a = {
+//             name: 'static',
+//             count: 0
+//         }
+//  console.log(foo(a, 'count', 10)); /* В консоль выведет: [{name:'static', count:0},{name:'static', count:1}, ..., {name:'static', count:9}] */
+    let a = {
+        name: 'static',
+        count: 0
+    }
+    function foo(a, num) {
+
+        if(num === 0) {
+            return `name: '${this.name}', count: 0`
+        }
+        return `name: '${this.name}', count: ${num--}`
+    }
+console.log(foo.call(a, 'count', 10))
+
+
+
+// let user = {
+//         name: 'Василий',
+//     age: 27
+// }
+// function getUserAge(){
+//         return this.age;
+// }
+// console.log(getUserAge.call(user));
+</script>

@@ -1,26 +1,4 @@
-// alert("Привет")
-// const animal = prompt("Какое у вас любимое животное?");
-// switch(animal){
-//     case "кошка":
-//     case "собака":
-//     case "хомяк":
-//         console.log("Это домашнее животное.")
-//         break;
-//
-//     case "рыба":
-//     case "птица":
-//     case "черепаха":
-//     case "ящерица":
-//         console.log("Это экзотический питомец.")
-//         break;
-//     default:
-//         console.log("Это мне неизвестно.")
-// }
-// Задача №1:
-// Необходимо задать пользователю вопрос, нравится ли ему JavaScript?
-//Если пользователь ответит положительно, необходимо вывести сообщение "Конечно, отличный язык."
-//Если пользователь ответил отрицательно, необходимо вывести сообщение "Не нравится? Вы кнопкой ошиблись?"
-//Вывод необходимо осуществить в модальное окно.
+"use strict";
 
 // Мое решение:
 // const input=prompt('Тебе нравится JS?')
@@ -341,3 +319,90 @@
 //     return  `**** **** **** ${String(str).slice(-4)}`;
 //  }
 // console.log(maskCardNumber('1245679456975165'));
+
+
+//       15/01/26
+//
+// save(
+//     "funny@mail.ru",
+//     function(data){
+//         console.log(`Email: ${data.email} был сохранен`);
+//     },
+// function (data){
+//         console.log(`Email: ${data.email} не был сохранен`);
+// }
+// );
+//
+//   function save(data, successFn, failedFn){
+//     console.log("Пытаемся сохранить данные")
+//       if(true){
+//           console.log("Данные не удалось сохранить");
+//           failedFn(data);
+//           return
+//       }
+//     console.log(`Данные "${data}" сохранены`);
+//       successFn(data);
+//   }
+
+// const allertHello = () => alert("Hello World!");
+// allertHello();
+
+
+
+//2
+//
+// printNums(2, 5)
+// function printNums(from, to) {
+//     if(from > to){
+//         return;
+//     }
+//     console.log(from);
+//     printNums(from+1, to+1, to);
+// }
+
+
+// const result = sumNums (2, 5);
+// console.log(result);
+//
+// function sumNums(from, to) {
+//     if(from > to){
+//         return 0;
+//     }
+//     return  from + (from+1, to+1, to);
+// }
+//
+// const result = sumOfDigits(1001)
+// console.log(result);
+//
+// function sumOfDigits(num) {
+//     if(num === 0 || num < 10){
+//         return num;
+//     }
+//     const lastNum = num%10;
+//     const remainingNum = Math.floor(num/10);
+//     return lastNum + sumOfDigits(remainingNum);
+// }
+
+// Задача: написать функцию, которая считает кол-во вызовов
+//
+// function createCounter() {
+//     let i = 0;
+//     return function(){
+//         return ++i;
+//     }
+//  }
+//  let counter1 = createCounter();
+// console.log(counter1());
+
+
+//Контект обьекта
+ let myObj = {
+     name: "Саша",
+     age: 27,
+     hello: function () {
+         return this.name + " " + this.age;
+     }
+ }
+ console.log(myObj.hello());
+
+ // call, apply, bind
