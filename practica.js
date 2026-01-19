@@ -349,7 +349,7 @@
 
 
 
-//2
+// 2
 //
 // printNums(2, 5)
 // function printNums(from, to) {
@@ -395,14 +395,133 @@
 // console.log(counter1());
 
 
-//Контект обьекта
- let myObj = {
-     name: "Саша",
-     age: 27,
-     hello: function () {
-         return this.name + " " + this.age;
-     }
- }
- console.log(myObj.hello());
+// //Контекст обьекта
+//  let myObj = {
+//      name: "Саша",
+//      age: 27,
+//      hello: function () {
+//          return this.name + " " + this.age;
+//      }
+//  }
+//  console.log(myObj.hello());
+//
+//
+// let user = {
+//     name: 'Василий',
+//     age: 27
+// }
+// function getUserAge(){
+//     return this.age;
+// }
+// console.log(getUserAge.call(user));
 
  // call, apply, bind
+//                                                16.01.26
+
+
+//1.
+
+// function Counter(){
+//     let count = 0;
+//
+//     this.up = function(){
+//         return ++count;
+//     }
+//     this.down = function(){
+//         return --count;
+//     }
+// }
+// let counter = new Counter();
+// alert(counter.up());
+// alert(counter.up());
+// alert(counter.down());
+//
+// //2.
+// function sum(a){
+//     return function (b){
+//         return a + b;
+//     }
+// }
+//3.
+// function inBetween(a, b){
+//     return function(x){
+//         return x >= b && x <= b;
+//     };
+// }
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+// alert(inBetween(3, 6))
+
+//                                  19.01.2026
+
+//
+// function fullName(firstName, lastName) {
+//     lastName = lastName[0].toLocaleUpperCase() + lastName.slice(1).toLowerCase();
+//     firstName = firstName[0].toLocaleUpperCase() + firstName.slice(1).toLowerCase();
+//
+//    return `${firstName} ${lastName}`;
+// }
+// console.log(fullName('павел', 'ТАРАСОВ'))
+
+// Необходимо создать стрелочную функцию-компаратор. Функция-компаратор - это функция, которая будет сравнивать два значения.
+// Функции будет передаваться два числа, назовем их a - первое число и b - второе число. Функция должна вернуть:
+// положительное число (любое), если значение a больше значения b
+// отрицательное число (любое), если значение a меньше значения b
+// число 0, если a и b равны
+// Примечание
+// Проверять входящие значения не нужно.
+// const comparator = (a, b) => {
+//     if (a > b) {return Math.trunc(Math.random()*10)}
+//     if (a < b) {return Math.trunc(Math.random()*-10)}
+//     if (a === b) {return 0}
+// };
+// console.log(comparator(5, 5));
+
+
+// /**
+//  * Функция склонения слова для числительного.
+//  * @param {number} count - Числительное.
+//  * @param {string} one - Вариант слова для цифры один (например: 1 "яблоко").
+//  * @param {string} two - Вариант слова для цифры два (например: 2 "яблока").
+//  * @param {string} five - Вариант слова для цифры пять (например: 5 "яблок").
+//  * @returns {string} Склоненное слово в зависимости от числительного.
+//  */
+// function declinationOfNumber(count, one, two, five) {
+//     const lastDigit = count % 10;
+//     const lastTwoDigit = count % 100;
+//     if (lastDigit >= 5 && lastDigit <= 20) {
+//         return five;
+//     }
+//     if(lastDigit === 1){
+//         return one;
+//     }
+//     if(lastDigit > 1 && lastDigit< 5){
+//         return two;
+//     }
+//     return five
+//
+//     console.log(`Вам пришло ${count} ${word} `)
+// }
+// const count = 1;
+// const word = declinationOfNumber(count, "сообщение", "сообщения", "сообщений");
+// console.log(word);
+
+
+/**
+ * @param name{string} - название компании.
+ * @param address{string} — адрес компании.
+ * @param timeStart{string} — время начала работы компании (например, "9:00").
+ * @param timeEnd{string} — время окончания работы компании (например, "22:00").
+ */
+
+function createCompanyObject(name, address, timeStart, timeEnd) {
+    return {name: name,
+        address: address,
+        time: `${timeStart} - ${timeEnd}`};
+}
+
+
+// const language = createLanguage("Javascript", 1995);
+// console.log(language);
+// function createLanguage(name, createdAd) {
+//     return {name, createdAd};
+// }
