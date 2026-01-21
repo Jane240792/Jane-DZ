@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dz-7</title>
+    <style>
+    #goods{
+        max-width: 600px;
+        margin: 30px auto;
+    }
+    img{
+        max-width: 100%;
+        height: auto;.
+    }
+
+    </style>
+</head>
+<body>
+<div id = "goods">
+
+</div>
+<div id="list" data-id="12">
+    <ul class="some-class">
+        <li>Первый пункт</li>
+        <li>Второй пункт</li>
+        <li class="some-class">Третий пункт</li>
+    </ul>
+    <!--Test-->
+</div>
+<form>
+    <input type="text" name="data1">
+    <input type="text" name="data2">
+</form>
+<table>
+
+</table>
+</body>
+</html>
+<script>
+
+//*DOM
+//корень
+console.log(document);
+
+//Тело и голову
+// console.log(document.head);
+// console.log(document.body);
+//
+// // Поиск тега по Id
+// let elem =  document.getElementById('list');
+// console.log(elem);
+// console.dir(elem);
+//
+// /* Все вложенные  */
+// console.log(elem.childNodes)
+//
+// //Получить все теги
+// console.log(elem.children);
+//
+// //первый и последний дочерний узел
+// console.log(elem.firstChild);
+// console.log(elem.lastChild);
+//
+// //первый и последний дочерний тег
+// console.log(elem.firstElementChild);
+// console.log(elem.lastElementChild);
+//
+// //Соседние узлы
+// console.log(elem.previousSibling);
+// console.log(elem.nextSibling);
+//
+// //Соседние теги
+// console.log(elem.previousElementSibling);
+// console.log(elem.nextElementSibling);
+//
+// //Родитель узлов
+// console.log(elem.parentNode);
+//
+// //Родитель тегов
+// console.log(elem.parentElement);
+//
+// //2. поиск по атрибутам
+// let elemByName = document.getElementsByName('data1');
+// console.log(elemByName);
+// elemByName[0].style.backgroundColor = "red";
+//
+// //3. по имени тега
+// let liElements = document.getElementsByTagName("li");
+// console.log(liElements[0]);
+//
+// //4. по имени класса
+// let someElements = document.getElementsByClassName("some-class");
+// console.log(someElements);
+//
+// //5. поиск по селектору
+// let oneElem = document.querySelector(".some-class");
+// console.log(oneElem);
+// let allElem = document.querySelectorAll(".some-class");
+// console.log(allElem);
+//
+// //создание тега
+// let ul = document.createElement("ul");
+// console.log(ul);
+// let li1 = document.createElement("li");
+// let li2 = document.createElement("li");
+// let li3 = document.createElement("li");
+// ul.appendChild(li1);
+// ul.appendChild(li2);
+// ul.appendChild(li3);
+// console.log(ul);
+// let text = document.createTextNode("Elem1")
+// li1.appendChild(text);
+//
+// //Работа с атрибутами
+// console.log(ul.hasAttribute("id"));
+// ul.setAttribute("id", "Js_ul");
+// console.log(ul.hasAttribute("id"));
+// console.log(ul.getAttribute("id"));
+//
+// //Атрибуты Style
+// ul.style.backgroundColor = "red";
+// console.log(ul.style);
+// ul.style.backgroundColor = "";
+//
+// //Атрибут class
+// ul.classList.add("some-class2");
+// ul.classList.add("some-class3");
+// ul.classList.remove("some-class3");
+// ul.classList.toggle("open");
+// ul.classList.toggle("open");
+// console.log(ul.classList.contains("some-class2"));
+// document.body.prepend(ul);
+//
+//
+// //
+// let p = document.createElement("p");
+// li3.appendChild(p);
+// p.innerHTML = "<b>test</b>"
+// console.log(p.innerHTML);
+// p.innerText = "<b>test</b>"
+//
+// let nav = document.createElement("nav");
+// document.body.prepend(nav);
+// nav.appendChild(p);
+// let removeElem = nav.removeChild(p)
+// let nav2 = nav.cloneNode(true);
+// document.body.prepend(nav2);
+//
+// // Таблицы
+//  let table = document.getElementsByTagName("table")[0];
+//  table.setAttribute("border", "1px solid red");
+// let caption =  table.createCaption();
+// caption.innerText = "Какой-то текст";
+//  let row = table.insertRow(0);
+// let cell1 = row.insertCell(0);
+// cell1.innerText = "#1"
+// let cell2 = row.insertCell(1);
+// cell2.innerText = "#2"
+//
+// console.log(table.rows);
+// console.log(table.rows[0].cells );
+// console.log(list.dataset);
+// console.log(list.getAttribute("data-id"));
+
+//Таймеры
+// let i = 0;
+// function showConsoleLog(){
+//     console.log("Всем привет!");
+//     if (i++<10){
+//         setTimeout(showConsoleLog, 2000);
+//     }
+// }
+// setTimeout(showConsoleLog, 2000);
+// let idSetTimeout = setTimeout(showConsoleLog, 2000);
+// clearTimeout(idSetTimeout);
+// console.log(idSetTimeout);
+// let i = 0;
+// let idSetInterval = setInterval(showConsoleLog, 2000)
+// function showConsoleLog(){
+//     console.log("Всем привет!");
+//     if (i++>=10){
+//         clearInterval(idSetInterval);
+//     }
+// }
+
+// function change_color_func(id, arr_color){
+// let elem = document.getElementById(id);
+// let i = 0;
+//     setInterval(function(){
+//         elem.style.color = arr_color[i];
+//         i++;
+//        if( i >= arr_color.length ) i = 0;
+//     }, 5000)
+// }
+// change_color_func("list", ["red", "blue", "yellow"]);
+
+
+//дата и время
+// библиотека moment.Js
+// let date = new Date();
+// console.log(date);
+// console.dir(date);
+//
+// // Месяц задается  с 0
+// date = new Date(2026, 0, 18, 14, 25,30,200);//  (установили дату ) //Sun Jan 18 2026 14:25:30 200миллисек
+// console.log(date);
+//
+// console.log(date.getDay()); // день недели 0 (воскресенье, отсчет начинается с него)
+// console.dir(date.getHours());//14
+// console.log(date.getMinutes());//25
+// console.log(date.setMinutes(50));// (заменили минуты)
+// console.log(date); // Sun Jan 18 2026 14:25:30 200миллисек
+
+// let date = Date.now(); //миллисекунд сейчас
+// date = new Date(2026,0,18,14,25,30);
+// date2 = new Date(2026,0,20,14,25,30);
+// console.log(date2-date);
+
+
+// Задача: вывести ин-фу о товаре
+let goods = [{
+    title: "Пианино",
+    price: 3000,
+    count: 25,
+    img:"https://www.belcanto.ru/media/images/publication/19071511.jpg"
+}, {
+    title: "Гитара",
+    price: 35000,
+    count: 15,
+    img:"https://www.belcanto.ru/media/images/publication/19071511.jpg"
+}, {
+    title: "Пианино",
+    price: 1000,
+    count: 5,
+    img:"https://www.belcanto.ru/media/images/publication/19071511.jpg"
+}]
+let container = document.getElementById('goods');
+console.log(container);
+console.log("Привет")
+for (let i = 0; i < goods.length; i++) {
+    renderGood(container, goods[i]);
+}
+
+function renderGood(el, good) {
+    let div = document.createElement("div");
+    div.style.width = "50%";
+    div.style.display = "inline-block";
+
+    let title = document.createElement("h2");
+    title.innerText = good.title;
+    div.appendChild(title);
+
+    let img = document.createElement("img");
+    img.src = good.img;
+    div.appendChild(img);
+    let info = document.createElement("p");
+    info.innerHTML = `<i>${good.price}руб</i>(количество ${good.count})`;
+    div.appendChild(info);
+
+    el.appendChild(div);
+}
+
+
+// let goods = [{
+//     title: "Пианино",
+//     price: 3000,
+//     count: 25,
+//     img:"https://www.belcanto.ru/media/images/publication/19071511.jpg"
+// }, {
+//     title: "Гитара",
+//     price: 35000,
+//     count: 15,
+//     img:"https://www.belcanto.ru/media/images/publication/19071511.jpg"
+// }, {
+//     title: "Пианино",
+//     price: 1000,
+//     count: 5,
+//     img:"https://www.belcanto.ru/media/images/publication/19071511.jpg"
+// }]
+// let container = document.getElementById('goods-container');
+// for (let i = 0; i < goods.length; i++) {
+//     renderGood(container, goods[i]);
+// }
+//
+// function renderGood(el, good) {
+//     let div = document.createElement("div");
+//     div.style.width = "50%";
+//     div.style.display = "inline-block";
+//
+//     let title = document.createElement("h2");
+//     title.innerText = good.title;
+//     div.appendChild(title);
+//
+//     let img = document.createElement("img");
+//     img.src = good.img;
+//     div.appendChild(img);
+//
+//     let info = document.createElement("p");
+//     info.innerHTML = `<i>${good.price}руб</i>(количество ${good.count})`;
+//     div.appendChild(info);
+//
+//     el.appendChild(div);
+// }
+</script>

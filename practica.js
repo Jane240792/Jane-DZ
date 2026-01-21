@@ -505,23 +505,11 @@
 // const word = declinationOfNumber(count, "сообщение", "сообщения", "сообщений");
 // console.log(word);
 
-
-/**
- * @param name{string} - название компании.
- * @param address{string} — адрес компании.
- * @param timeStart{string} — время начала работы компании (например, "9:00").
- * @param timeEnd{string} — время окончания работы компании (например, "22:00").
- */
-
-function createCompanyObject(name, address, timeStart, timeEnd) {
-    return {name: name,
-        address: address,
-        time: `${timeStart} - ${timeEnd}`};
-}
-
-
 // const language = createLanguage("Javascript", 1995);
 // console.log(language);
 // function createLanguage(name, createdAd) {
 //     return {name, createdAd};
 // }
+
+//
+

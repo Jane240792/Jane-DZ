@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задача №1</title>
+</head>
+<body>
+<div id="clock-container">
+    <div id="clock"></div>
+</div>
+
+</body>
+</html>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        width: 500px;
+        margin: 0;
+        background: #e2e394;
+    }
+    #clock-container {
+        background-color: rgba(94, 241, 241, 0.75);
+        padding: 16px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #clock {
+        font-size: 48px;
+        font-weight: bold;
+    }
+    .hours{
+        color: blue;
+    }
+    .minutes{
+        color: orange;
+    }
+    .seconds{
+        color: red;
+    }
+</style>
+<script>
+    // 1. Создать функцию, которая выводит время
+    // в html и обновляет значения каждую секунду.
+    // Время выводить в формате чч:мм:cc, при этом
+    // часы, минуты и секунды отобразить разными цветами.
+   const clockElement = document.getElementById("clock");
+   function updateTime() {
+       const now = new Date();
+       let hours = now.getHours();
+       let minutes = now.getMinutes();
+       let seconds = now.getSeconds();
+       hours = hours.toString().padStart(2, "0");
+       minutes = minutes.toString().padStart(2, "0");
+       seconds = seconds.toString().padStart(2, "0");
+       const timeString = `
+       <span class="hours">${hours}</span>
+       <span class="separator">:</span>
+       <span class="minutes">${minutes}</span>
+       <span class="separator">:</span>
+       <span class="seconds">${seconds}</span>
+`;
+       clockElement.innerHTML = timeString;
+   }
+
+    // function updateTimeSimple() {
+    //     const now = new Date();
+    //     clockElement.textContent = now.toLocaleTimeString();
+    // }
+
+updateTime();
+   setInterval(updateTime, 1000);
+
+//    updateTimeSimple();
+//    setInterval(updateTimeSimple, 1000);
+
+
+</script>

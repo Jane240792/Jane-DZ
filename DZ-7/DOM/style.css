@@ -1,0 +1,28 @@
+ul{
+    list-style: none;
+    padding-left: 20;
+}
+li{
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.active{
+    background: gold;
+}
+button{
+    margin: 10px;
+    padding: 5px 10px;
+}
+.highlight{
+    background-color: yellow;
+}
+.big-text{
+    font-size: 48px;
+}
+.hidden{
+    display: none;
+}
+.border{
+    border: 2px solid red;
+}
