@@ -25,30 +25,30 @@
 // const children = parent.childNodes;
 // console.log(children);
 
-// // работа с textContent
-// const firstItem = document.querySelector(".item");
-// console.log("Исходный textContent", firstItem.textContent);
-// firstItem.textContent = "Измененный текст(textContent)";;
-// console.log("После TextContent: ", firstItem.outerHTML);
-//
-// //Работа с innerHtml
-// const container = document.querySelector(".container");
-// console.log("исходный innerHtml", container.innerHTML);
-// container.innerHTML += "<div class='item'>Новый элемент(innerHTML)</div>";
-// console.log("После InnerHtml", container.innerHTML);
-//
-// //Работа с outerHTML
-// const child1 = document.getElementById("first");
-// console.log("Исходный outerHtml", child1.outerHTML);
-// child1.outerHTML = "<div class='new-element'>Замененный элемент(outerHTML)</div>";
-// console.log('После outerHtml', document.getElementById("parent").innerHTML);
-//
-// //сравнение методов
-// const title = document.getElementById("main-title");
-// console.log( "Сравнение методов для заголовка");
-// console.log("textContent", title.textContent);
-// console.log("innerHTML", title.innerHTML);
-// console.log("outerHTML", title.outerHTML);
+// работа с textContent
+const firstItem = document.querySelector(".item");
+console.log("Исходный textContent", firstItem.textContent);
+firstItem.textContent = "Измененный текст(textContent)";;
+console.log("После TextContent: ", firstItem.outerHTML);
+
+//Работа с innerHtml
+const container = document.querySelector(".container");
+console.log("исходный innerHtml", container.innerHTML);
+container.innerHTML += "<div class='item'>Новый элемент(innerHTML)</div>";
+console.log("После InnerHtml", container.innerHTML);
+
+//Работа с outerHTML
+const child1 = document.getElementById("first");
+console.log("Исходный outerHtml", child1.outerHTML);
+child1.outerHTML = "<div class='new-element'>Замененный элемент(outerHTML)</div>";
+console.log('После outerHtml', document.getElementById("parent").innerHTML);
+
+//сравнение методов
+const title = document.getElementById("main-title");
+console.log( "Сравнение методов для заголовка");
+console.log("textContent", title.textContent);
+console.log("innerHTML", title.innerHTML);
+console.log("outerHTML", title.outerHTML);
 //
 //                             // Атрибуты
 // //getAttribute()- получаем атрибуты

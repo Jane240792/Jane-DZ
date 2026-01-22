@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задача 2</title>
+    <style>
+        #phones{
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: lemonchiffon;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+        p{
+            color: gray;
+        }
+        .cards{
+            width: 30%;
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            border: 2px solid gray;
+            padding: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="phones">
+</div>
+
+</body>
+</html>
+<script>
+
+    // 2. Дан массив с объектами, где каждый объект
+    // описывает товар: фото, артикул, описание и т.п.
+    // Сформировать функцию, которой передаётся массив
+    // товаров, и которая создаст и внесёт все
+    // необходимые html элементы, стили, и содержание
+    // для отображения всей информации о товарах.
+
+let phones = [{
+    code: 183835,
+    title: "Samsung Galaxy Z Flip",
+    description: "5G 512GB",
+    color: "коралловый",
+    price: 101490,
+    img:"https://cdn1.technopark.ru/technopark/photos_resized/product/1000_1000/795545/1_795545.jpg?timestamp=2025-07-09_09-48-30"
+},{
+    code: 186661,
+    title: "Apple iPhone 17 Pro Max",
+    description: "5G 256GB",
+    color: "оранжевый",
+    price: 164990,
+    img: "https://cdn1.technopark.ru/technopark/photos_resized/product/248_248/802411/2_802411.jpg?timestamp=2025-09-10_04-22-32"
+},{
+    code: 183775,
+    title: "Samsung Galaxy Z Fold",
+    description: "5G 512GB",
+    color: "черный",
+    price: 172990,
+    img: "https://cdn1.technopark.ru/technopark/photos_resized/product/248_248/795589/4_795589.jpg?timestamp=2025-07-09_12-38-38"
+}]
+
+let container = document.getElementById("phones");
+for (let i = 0; i < phones.length; i++) {
+    renderPhone(container, phones[i]);
+}
+
+function renderPhone(el, phone) {
+    let div = document.createElement("div");
+    div.classList.add("cards");
+
+    let img = document.createElement("img");
+    img.src = phone.img;
+    div.appendChild(img);
+
+    let code = document.createElement("p");
+    code.innerText = phone.code;
+    div.appendChild(code);
+
+    let title = document.createElement("h2");
+    title.innerText = phone.title;
+    div.appendChild(title);
+
+    let discription = document.createElement("p");
+    discription.innerText = phone.description;
+    div.appendChild(discription);
+
+
+el.appendChild(div);
+
+
+}
+
+
+
+
+</script>
