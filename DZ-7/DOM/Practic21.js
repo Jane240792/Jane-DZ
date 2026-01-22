@@ -107,4 +107,23 @@ btn4.addEventListener("click", () => {
     console.log("Есть класс highlight", hasHighlight);
     console.log("Есть класс big-text", hasBigText);
     console.log("Все классы элемента", box.classList);
-})
+});
+
+//Получаем элементы
+const jsBox = document.getElementById("js-styled-box");
+
+//исходные стили до изменений
+console.log("Исходные стили JSBox", window.getComputedStyle(jsBox));
+
+//меняем несколько стилей через обьект style
+jsBox.style.backgroundColor = "#ffeb3b";
+jsBox.style.color = "#333";
+jsBox.style.padding = "20px";
+jsBox.style.border = "2px solid #ff5722";
+jsBox.style.borderRadius = "8px";
+jsBox.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)";
+
+//Показываем вычисленные стили в консоли
+const computedStyles = window.getComputedStyle(jsBox);
+console.log( "цвет фона", computedStyles.backgroundColor );
+console.log("размер шрифта", computedStyles.fontSize);
