@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задача №3</title>
+</head>
+<body>
+<div class="container">
+    <div class="circle" color="red"></div>
+    <div class="circle" color="yellow"></div>
+    <div class="circle" color="green"></div>
+</div>
+
+</body>
+</html>
+<script>
+    // <!--//3. Создать светофор (красный, желтый,-->
+    // <!--зелёный). Переключать цвет у светофора-->
+    // <!--через каждые 2 сек сверху вниз и снизу вверх.-->
+
+    const circles = document.querySelectorAll('.circle'); // [ div, div, div]
+
+    let activelightIndex = 0;// индекс
+
+    let id=setInterval(
+        changeColor
+    , 2000);
+
+
+
+    function changeColor() {
+       // debugger
+        let currentLight = circles[activelightIndex];
+       // let color = currentLight.getAttribute("color")
+        let color = "red";
+        console.log(currentLight.classList);
+        currentLight.classList.toggle(color);
+        console.log(currentLight.classList);
+
+        activelightIndex++;
+        //activelightIndex = 1;
+
+        if(activelightIndex > 2){
+            activelightIndex= 0;
+        }
+
+        currentLight.classList.toggle(color);
+    }
+setTimeout( () => {
+        clearInterval(id)
+    },
+    20000
+)
+
+
+</script>
+<style>
+    .container {
+        width: 600px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        background: gray;
+        padding: 20px 0;
+    }
+
+    .circle{
+        width: 500px;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e1e1e1;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+
+    }
+
+    .red{
+        background-color: red;
+        box-shadow: 0 0 40px #ff0000;
+
+    }
+
+    .green{
+        background-color: green;
+        box-shadow: 0 0 40px #03c003;
+    }
+
+   .yellow{
+        background-color: #eeee01;
+        box-shadow: 0 0 40px #ffff00;
+
+    }
+
+</style>

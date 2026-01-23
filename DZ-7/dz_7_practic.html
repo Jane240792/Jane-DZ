@@ -162,7 +162,7 @@ console.log(document);
 // console.log(list.dataset);
 // console.log(list.getAttribute("data-id"));
 
-//Таймеры
+// Таймеры
 // let i = 0;
 // function showConsoleLog(){
 //     console.log("Всем привет!");
@@ -174,14 +174,14 @@ console.log(document);
 // let idSetTimeout = setTimeout(showConsoleLog, 2000);
 // clearTimeout(idSetTimeout);
 // console.log(idSetTimeout);
-// let i = 0;
-// let idSetInterval = setInterval(showConsoleLog, 2000)
-// function showConsoleLog(){
-//     console.log("Всем привет!");
-//     if (i++>=10){
-//         clearInterval(idSetInterval);
-//     }
-// }
+let i = 0;
+let idSetInterval = setInterval(showConsoleLog, 2000)
+function showConsoleLog(){
+    console.log("Всем привет!");
+    if (i++>=10){
+        clearInterval(idSetInterval);
+    }
+}
 
 // function change_color_func(id, arr_color){
 // let elem = document.getElementById(id);
