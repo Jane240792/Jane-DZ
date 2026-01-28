@@ -120,13 +120,8 @@
 // let arr = [ { 'price' : 10, 'count' : 2 }, { 'price' : 5, 'count' : 5},
 //  { 'price' : 8, 'count' : 5 }, { 'price' : 12, 'count' : 4 }, { 'price' : 8, 'count' : 4},];
 
-let arr = [ { 'price' : 10, 'count' : 2 },
-            { 'price' : 5, 'count' : 5},
-            { 'price' : 8, 'count' : 5 },
-            { 'price' : 12, 'count' : 4 },
-            { 'price' : 8, 'count' : 4},];
 
- console.log (arr.sort(byField('price')));
+ // console.log (arr.sort(byField('price')));
 
 // 1.
 // function byField(fieldPrace){
@@ -140,5 +135,108 @@ let arr = [ { 'price' : 10, 'count' : 2 },
 // function byField(fieldName) {
 // return (a, b) => a[fieldName] - b[fieldName];
 // }
+
+
+
+
+let arr = [
+    { 'price' : 10, 'count' : 2 },
+    { 'price' : 5, 'count' : 5},
+    { 'price' : 8, 'count' : 5 },
+    { 'price' : 12, 'count' : 4 },
+    { 'price' : 8, 'count' : 4},
+    { 'price' : 1, 'count' : 0},
+    { 'price' : 2, 'count' : 0, comment: "брак"},
+    { 'price' : 5, 'count' : 3, reserved: 4},
+    { 'price' : 4, 'count' : 3, reserved: 2},
+    { 'price' : 4, 'count' : 3, discount: true},
+]
+
+let arr2 = [ { 'price' : 10, 'count' : 2 },
+    { 'price' : 5, 'count' : 5},
+    { 'price' : 12, 'count' : 4 },
+    { 'price' : 1, 'count' : 0},
+    { 'price' : 2, 'count' : 0, comment: "брак"},
+    { 'price' : 5, 'count' : 3, reserved: 4},
+    { 'price' : 4, 'count' : 3, reserved: 2},
+    { 'price' : 4, 'count' : 3, discount: true},
+]
+//1. получить список товаров доступных к заказу.
+
+let myFilter = function (tovar, i, arr) {
+    let result = false;
+    // console.log('i', i);
+    // console.log("arr", arr);
+    if(i === 7){
+        return true;
+    }
+    if(tovar.reserved){
+        result = tovar.count-tovar.reserved > 0;
+    }else{
+        result = tovar.count > 0;
+    }
+    return result;
+};
+let myFilter1 = (tovar) => {
+    return tovar.count > 0
+}
+console.log (arr.filter(myFilter));
+console.log("Доступны к заказу:",arr2.filter(tovar => tovar.count > 0 ));
+
+// 2. получить список товаров по скидке
+console.log("Товар по скидке:", arr.filter(tovar => tovar.discount));
+
+// 3. получить список товаров бракованных
+console.log("Товары с браком:", arr.filter(tovar => tovar.comment === "брак"));
+
+//4. написать функцию которая принимает в качестве аргумента цену и возвращает  список товаров  дороже этой цены
+function productExpensive(inputPrice, arr) {
+    return arr.filter(tovar => tovar.price > inputPrice);
+}
+ console.log("Товары дороже введенной цены", productExpensive(2, arr));
+
+
+// 5.  получить  тот же список товаров но с удвоеной ценной, скоро будет подорожание
+console.log("Товар с удвоенной ценой", arr.map(tovar => ({ ...tovar, price: tovar.price * 2})));
+
+// 6. получить список товаров которые кончились
+console.log("Товары закончились:",arr2.filter(tovar => tovar.count === 0 ));
+
+//7. написать функцию которая удаляет все резервы у товаров
+function deleteReserve(arr) {
+    return arr.map(tovar => {
+        if(arr.includes(tovar.reserved)){
+            arr.pop();
+            return tovar;
+        }
+        return tovar;
+    })
+}
+console.log(deleteReserve());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
